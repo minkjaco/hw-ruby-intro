@@ -3,33 +3,23 @@
 # Part 1
 
 def sum arr
-  s = 0
-  for a in arr
-    s = s + a
-  end
-  return s
+  return 0 if arr.length == 0
+  return arr.reduce(:+)
 end
 
 def max_2_sum arr
-  return sum arr.max(2)
+  return sum arr.max(2).to_a
 end
 
 def sum_to_n? arr, n
-  for i in (0..arr.length-2)
-    item = arr[i]
-    for a in arr[(i+1)..(arr.length-1)]
-      if item + a == n
-        return true
-      end
-    end
-  end
+  arr.permutation(2).to_a.each {|x| return true if (sum x) == n}
   return false
 end
 
 # Part 2
 
 def hello(name)
-  return "Hello, " + name
+  return "Hello, %s" % [name]
 end
 
 def starts_with_consonant? s
