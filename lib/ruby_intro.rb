@@ -12,14 +12,14 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  arr.permutation(2).to_a.each {|x| return true if (sum x) == n}
+  arr.permutation(2).each { |x| return true if (sum x) == n }
   return false
 end
 
 # Part 2
 
 def hello(name)
-  return "Hello, %s" % [name]
+  return "Hello, #{name}"
 end
 
 def starts_with_consonant? s
@@ -33,12 +33,12 @@ end
 # Part 3
 
 class BookInStock
-  attr_reader :isbn, :price
-  attr_writer :isbn, :price
+  attr_accessor :isbn, :price
 
   def initialize(isbn, price)
     raise ArgumentError.new("ISBN is empty") if isbn.length == 0
     raise ArgumentError.new("Price is nonpositive") if price <= 0
+    
     @isbn = isbn
     @price = price
   end
