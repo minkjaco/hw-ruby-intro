@@ -30,7 +30,7 @@ def starts_with_consonant?(s_test)
 end
 
 def binary_multiple_of_4?(s_test)
-  s_test.match?(/\A[01]*100\z/) || s_test == '0'
+  s_test.match?(/\A[01]*00\z/) || s_test == '0'
 end
 
 # Part 3
